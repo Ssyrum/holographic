@@ -17,6 +17,7 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -24,8 +25,6 @@ public class MouseLook : MonoBehaviour
     {
         float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivityX * Time.deltaTime;
         float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivityY * Time.deltaTime * (flipY ? -1 : 1);
-        //turn.x = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        //turn.y = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         xRotation += mouseY;
         yRotation += mouseX;
