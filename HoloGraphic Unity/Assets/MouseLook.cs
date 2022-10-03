@@ -8,11 +8,10 @@ public class MouseLook : MonoBehaviour
 
     public float mouseSensitivityX;
     public float mouseSensitivityY;
-
     public Transform orientation;
-
     float xRotation;
     float yRotation;
+    public bool flipY = true;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +23,7 @@ public class MouseLook : MonoBehaviour
     void Update()
     {
         float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivityX * Time.deltaTime;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivityY * Time.deltaTime;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivityY * Time.deltaTime * (flipY ? -1 : 1);
         //turn.x = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         //turn.y = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
@@ -34,6 +33,6 @@ public class MouseLook : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
-        //playerBody.Rotate(Vector3.up * turn.x);
+        //playerBody.Rotate(Vector3.up * xRotation);
     }
 }
