@@ -12,7 +12,7 @@ public class Card : ScriptableObject
     public int attack;
     public int defense;
     public int health;
-    
+
     public void Print()
     {
         Debug.Log(name + ": " + description);
