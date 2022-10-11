@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Dos
   description: Use a Denial of Service attack to inflict 20 damage.
   artwork: {fileID: 0}
-  memoryCost: 5
+  memoryCost: 10
   attack: 20
   defense: 10
   health: 100
